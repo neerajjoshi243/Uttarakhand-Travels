@@ -1,0 +1,286 @@
+/* ================================
+   RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   BASE
+================================ */
+body {
+  background: #eef3ee;
+  font-family: Arial, sans-serif;
+}
+
+/* ================================
+   PAGE WRAPPER
+================================ */
+.basic-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* ================================
+   OUTER CONTAINER
+================================ */
+.basic-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+/* ================================
+   LEFT SIDE
+================================ */
+.left-side {
+  width: 340px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #355c4d, #4f7a67);
+  border-radius: 28px;
+  padding: 40px 36px;
+  color: white;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.left-side h1 {
+  margin-top: 28px;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.left-side p {
+  margin-top: 16px;
+  color: #dbe7dd;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ================================
+   PROGRESS BAR
+================================ */
+.progress-box {
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.active {
+  background: white;
+  color: #355c4d;
+}
+
+.line {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 8px;
+}
+
+.active-line {
+  background: white;
+}
+
+/* ================================
+   FORM CARD
+================================ */
+.form-card {
+  flex: 1;
+  background: white;
+  border-radius: 28px;
+  padding: 40px 36px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.form-card h2 {
+  font-size: 32px;
+  color: #244034;
+}
+
+/* ================================
+   FORM
+================================ */
+form {
+  margin-top: 28px;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #244034;
+}
+
+.input-field {
+  width: 100%;
+  border: 1.5px solid #d7ddd6;
+  border-radius: 14px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8faf8;
+  transition: border 0.25s;
+}
+
+.input-field:focus-within {
+  border-color: #355c4d;
+  background: #f3f8f5;
+}
+
+.input-field svg {
+  color: #355c4d;
+  flex-shrink: 0;
+}
+
+.input-field input {
+  width: 100%;
+  height: 54px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #1a2e26;
+}
+
+.input-field input::placeholder {
+  color: #aabfb5;
+}
+
+.input-field input[type="number"]::-webkit-inner-spin-button,
+.input-field input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ================================
+   BUTTON
+================================ */
+.continue-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: #355c4d;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+}
+
+.continue-btn:hover {
+  background: #244034;
+  transform: translateY(-1px);
+}
+
+.continue-btn:active {
+  transform: translateY(0);
+}
+
+/* ================================
+   TABLET  (≤ 900px)
+================================ */
+@media (max-width: 900px) {
+  .basic-page {
+    padding: 24px 16px;
+  }
+
+  .basic-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ← YEH DO LINES SABSE ZAROORI HAIN */
+  .left-side {
+    width: 100%;
+    flex-shrink: unset;
+    padding: 32px 28px;
+    border-radius: 22px;
+  }
+
+  .form-card {
+    padding: 32px 28px;
+    border-radius: 22px;
+  }
+
+  .left-side h1  { font-size: 34px; }
+  .form-card h2  { font-size: 28px; }
+  .progress-box  { margin-top: 32px; }
+}
+
+/* ================================
+   MOBILE  (≤ 480px)
+================================ */
+@media (max-width: 480px) {
+  .basic-page { padding: 16px 12px; }
+
+  .left-side {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .left-side h1 { font-size: 28px; margin-top: 20px; }
+  .left-side p  { font-size: 14px; }
+
+  .form-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .form-card h2          { font-size: 24px; }
+  .input-box             { margin-bottom: 16px; }
+  .input-box label       { font-size: 14px; }
+  .input-field input     { height: 48px; font-size: 14px; }
+  .continue-btn          { padding: 14px; font-size: 15px; }
+  .step                  { width: 34px; height: 34px; font-size: 13px; }
+  .line                  { margin: 0 6px; }
+}
+
+/* ================================
+   VERY SMALL  (≤ 360px)
+================================ */
+@media (max-width: 360px) {
+  .left-side h1       { font-size: 24px; }
+  .form-card h2       { font-size: 21px; }
+  .input-field input  { height: 44px; font-size: 13px; }
+  .continue-btn       { font-size: 14px; padding: 13px; }
+}

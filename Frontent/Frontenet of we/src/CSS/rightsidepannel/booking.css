@@ -1,0 +1,184 @@
+/* Sidebar Box */
+.service-box {
+  width: 100%;
+  max-width: 300px;   /* desktop limit */
+  padding: 20px;
+  background: #f7f6f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+.service-box h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Description */
+.service-box p {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Options */
+.service-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Option Button */
+.option {
+  padding: 10px;
+  border: none;
+  background: #e9e7e3;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.option:hover {
+  background: #ddd;
+}
+
+/* Main Button */
+.start-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #2f5d50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background: #24463c;
+}
+
+/* Footer */
+.footer-text {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.footer-text p {
+  font-size: 13px;
+}
+
+.footer-text span {
+  color: #2f5d50;
+  font-weight: bold;
+}
+
+/* ========================= */
+/* 📱 TABLET */
+@media (max-width: 1024px) {
+
+  .service-box {
+    max-width: 250px;
+    padding: 18px;
+  }
+
+  .service-box h2 {
+    font-size: 18px;
+  }
+
+  .option {
+    font-size: 13px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  .service-box {
+    max-width: 100%;     /* full width */
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .service-box h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .service-box p {
+    text-align: center;
+  }
+
+  .service-options {
+    flex-direction: row;     /* horizontal buttons */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .option {
+    flex: 1 1 45%;           /* 2 per row */
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .start-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE */
+@media (max-width: 480px) {
+
+  .service-options {
+    flex-direction: column;  /* back to vertical */
+  }
+
+  .option {
+    flex: 1 1 100%;
+  }
+
+  .service-box {
+    padding: 12px;
+  }
+}
+
+
+.booking-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.booking-tab {
+  padding: 8px 20px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.booking-tab--active {
+  border-color: #1a73e8;
+  background: #1a73e8;
+  color: white;
+}
+
+.price-hour {
+  font-size: 12px;
+  color: #888;
+  margin-left: 6px;
+}

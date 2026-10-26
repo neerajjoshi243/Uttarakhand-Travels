@@ -1,0 +1,26 @@
+/* page container */
+.page {
+  width: 100%;
+  padding: 0 40px;
+}
+
+/* main layout */
+.main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* left side */
+.left {
+  width: 70%;
+}
+
+/* right side */
+.right {
+  width: 30%;
+  position: sticky;
+  top: 20px;
+}

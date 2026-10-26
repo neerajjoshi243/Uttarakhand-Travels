@@ -1,0 +1,390 @@
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.lyb-page {
+  min-height: 100vh;
+  background: #f4f6fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Hero ── */
+.lyb-hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 48px 24px 36px;
+}
+
+.lyb-hero-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+
+.lyb-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.lyb-title   { font-size: clamp(28px, 5vw, 42px); font-weight: 700; margin-bottom: 10px; }
+.lyb-subtitle{ font-size: 15px; opacity: 0.8; line-height: 1.6; }
+
+.lyb-hero-steps {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 32px);
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.lyb-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.lyb-step-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px;
+}
+
+/* ── Body ── */
+.lyb-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+/* ── Form Card ── */
+.lyb-form-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* ── Section ── */
+.lyb-section { padding: 32px; }
+
+.lyb-section-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.lyb-section-icon { font-size: 26px; margin-top: 2px; }
+
+.lyb-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.lyb-section-sub {
+  font-size: 13px;
+  color: #888;
+  margin-top: 3px;
+}
+
+.lyb-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 0 32px;
+}
+
+/* ── Grid ── */
+.lyb-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.lyb-col-full { grid-column: 1 / -1; }
+
+/* ── Field ── */
+.lyb-field { display: flex; flex-direction: column; gap: 6px; }
+
+.lyb-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.lyb-req   { color: #e53e3e; }
+.lyb-hint  { color: #aaa; font-weight: 400; }
+
+/* ── Input ── */
+.lyb-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  background: #fafafa;
+}
+
+.lyb-input:focus        { border-color: #3b82f6; background: white; }
+.lyb-input--err         { border-color: #e53e3e !important; }
+
+.lyb-prefix-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.lyb-prefix-wrap:focus-within { border-color: #3b82f6; background: white; }
+
+.lyb-prefix {
+  padding: 11px 12px;
+  background: #f0f4ff;
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+  border-right: 1.5px solid #e2e8f0;
+}
+
+.lyb-input--prefixed {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  flex: 1;
+}
+
+.lyb-err-msg { font-size: 12px; color: #e53e3e; margin-top: 2px; }
+
+/* ── Fuel / Type Buttons ── */
+.lyb-fuel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+.lyb-fuel-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lyb-fuel-btn:hover       { border-color: #3b82f6; background: #eff6ff; }
+.lyb-fuel-btn--active     { border-color: #3b82f6; background: #eff6ff; color: #1d4ed8; }
+.lyb-fuel-btn--err        { border-color: #e53e3e; }
+.lyb-fuel-icon            { font-size: 22px; }
+.lyb-fuel-label           { font-size: 13px; font-weight: 600; }
+
+/* ── Image Upload ── */
+.lyb-dropzone {
+  border: 2px dashed #cbd5e0;
+  border-radius: 14px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #fafafa;
+}
+
+.lyb-dropzone:hover,
+.lyb-dropzone--active { border-color: #3b82f6; background: #eff6ff; }
+
+.lyb-dropzone-icon  { font-size: 36px; margin-bottom: 10px; }
+.lyb-dropzone-text  { font-size: 14px; color: #444; margin-bottom: 4px; }
+.lyb-dropzone-hint  { font-size: 12px; color: #aaa; }
+.lyb-link           { color: #3b82f6; text-decoration: underline; }
+
+.lyb-img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.lyb-img-thumb {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 2px solid #e2e8f0;
+}
+
+.lyb-img-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.lyb-img-cover {
+  position: absolute;
+  top: 6px; left: 6px;
+  background: #3b82f6;
+  color: white;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.lyb-img-remove {
+  position: absolute;
+  top: 6px; right: 6px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 22px; height: 22px;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.lyb-img-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  aspect-ratio: 4/3;
+  background: #fafafa;
+  cursor: pointer;
+  font-size: 24px;
+  color: #aaa;
+  transition: all 0.2s;
+}
+
+.lyb-img-add:hover { border-color: #3b82f6; color: #3b82f6; }
+.lyb-img-add small { font-size: 11px; }
+
+/* ── Toggle ── */
+.lyb-avail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lyb-avail-label { font-size: 15px; font-weight: 600; color: #1a1a2e; }
+.lyb-avail-sub   { font-size: 13px; color: #888; margin-top: 2px; }
+
+.lyb-toggle {
+  width: 48px; height: 26px;
+  border-radius: 13px;
+  border: none;
+  background: #cbd5e0;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.lyb-toggle--on { background: #3b82f6; }
+
+.lyb-toggle-thumb {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.3s;
+  display: block;
+}
+
+.lyb-toggle--on .lyb-toggle-thumb { transform: translateX(22px); }
+
+/* ── Verified Notice ── */
+.lyb-verified-notice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 24px 0;
+}
+
+.lyb-verified-icon  { font-size: 22px; }
+.lyb-verified-title { font-size: 14px; font-weight: 700; color: #166534; }
+.lyb-verified-sub   { font-size: 13px; color: #4ade80; margin-top: 3px; color: #15803d; }
+
+/* ── Submit Button ── */
+.lyb-btn-primary {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.lyb-btn-primary:hover    { opacity: 0.92; transform: translateY(-1px); }
+.lyb-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ── Success ── */
+.lyb-success {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6fb;
+  padding: 24px;
+}
+
+.lyb-success-card {
+  background: white;
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.lyb-success-icon { font-size: 56px; margin-bottom: 16px; }
+.lyb-success-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+.lyb-success-card p  { color: #666; font-size: 14px; margin-bottom: 24px; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+
+  .lyb-section  { padding: 24px 16px; }
+  .lyb-divider  { margin: 0 16px; }
+  .lyb-grid-2   { grid-template-columns: 1fr; }
+  .lyb-col-full { grid-column: 1; }
+
+  .lyb-fuel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lyb-hero     { padding: 36px 16px 28px; }
+  .lyb-hero-steps { gap: 16px; }
+  .lyb-step     { font-size: 11px; }
+
+  .lyb-img-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lyb-title { font-size: 26px; }
+
+}
